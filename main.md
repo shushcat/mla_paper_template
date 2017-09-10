@@ -1,7 +1,7 @@
 ---
 title: Paper Title
 author: John O. Brickley
-csl: mla-with-url.csl
+csl: mla8.csl
 bibliography: references.bib
 ---
 
