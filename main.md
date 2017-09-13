@@ -7,4 +7,4 @@ bibliography: references.bib
 
 This is where the paper goes.
 
-# Works Cited #
+# Bibliography #
