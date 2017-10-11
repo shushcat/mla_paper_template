@@ -1,10 +1,6 @@
 \documentclass[12pt]{scrartcl}
 
-$if(fontfamily)$
-\usepackage[$for(fontfamilyoptions)$$fontfamilyoptions$$sep$,$endfor$]{$fontfamily$}
-$else$
 \usepackage{lmodern}
-$endif$
 
 % Use double spacing
 \usepackage{setspace}
@@ -32,12 +28,6 @@ $endfor$
 $if(euro)$
   \newcommand{\euro}{€}
 $endif$
-$if(mainfont)$
-    \setmainfont[$for(mainfontoptions)$$mainfontoptions$$sep$,$endfor$]{$mainfont$}
-$endif$
-$if(sansfont)$
-    \setsansfont[$for(sansfontoptions)$$sansfontoptions$$sep$,$endfor$]{$sansfont$}
-$endif$
 $if(monofont)$
     \setmonofont[Mapping=tex-ansi$if(monofontoptions)$,$for(monofontoptions)$$monofontoptions$$sep$,$endfor$$endif$]{$monofont$}
 $endif$
@@ -56,7 +46,10 @@ $endif$
 \usepackage{microtype}
 \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
+
+% Set margins
 \usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+
 \usepackage[unicode=true]{hyperref}
 $if(colorlinks)$
 \PassOptionsToPackage{usenames,dvipsnames}{color} % color is loaded by hyperref
@@ -153,57 +146,62 @@ $endif$
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{1}
 
-$if(dir)$
-\ifxetex
-  % load bidi as late as possible as it modifies e.g. graphicx
-  $if(latex-dir-rtl)$
-  \usepackage[RTLdocument]{bidi}
-  $else$
-  \usepackage{bidi}
-  $endif$
-\fi
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
-  \TeXXeTstate=1
-  \newcommand{\RL}[1]{\beginR #1\endR}
-  \newcommand{\LR}[1]{\beginL #1\endL}
-  \newenvironment{RTL}{\beginR}{\endR}
-  \newenvironment{LTR}{\beginL}{\endL}
-\fi
-$endif$
 $for(header-includes)$
 $header-includes$
 $endfor$
 
 $if(title)$
-\title{$title$$if(thanks)$\thanks{$thanks$}$endif$}
+\title{$title$}
 $endif$
 $if(subtitle)$
 \providecommand{\subtitle}[1]{}
 \subtitle{$subtitle$}
 $endif$
 $if(author)$
-\author{$for(author)$$author$$sep$ \and $endfor$}
+\author{$author$}
 $endif$
 $if(institute)$
-\institute{$for(institute)$$institute$$sep$ \and $endfor$}
+\institute{$institute$}
 $endif$
+
 \date{$date$}
 
-% \usepackage{titlesec}
-% \titlelabel{\thetitle.\quad}
-
+% Periods after footnote numerals
 \renewcommand{\thesection}{\arabic{section}.}
 
-% Follow footnote marks with periods.
-% \usepackage{footmisc}
-% \usepackage{scrextend}
-\deffootnote[1.7em]{1.6em}{2em}{\thefootnotemark.\enskip}
+% Header on non-title pages
+\usepackage{scrlayer-scrpage}
+\ohead{Brickley \pagemark}
+\cfoot{}
 
+% MLA title
+\renewcommand*{\maketitle}{%
+\thispagestyle{plain}
+\begin{flushleft}
+$if(author)$
+$author$\\
+$endif$
+$if(instructor)$
+$instructor$\\
+$endif$
+$if(course)$
+$course$\\
+$endif$
+$date$
+\end{flushleft}
+\bigskip
+\begin{center}
+\Large{$title$}
+\bigskip
+\end{center}
+}
 
 \begin{document}
+
 $if(title)$
 \maketitle
 $endif$
+
 $if(abstract)$
 \begin{abstract}
 $abstract$
@@ -212,8 +210,8 @@ $endif$
 
 $for(include-before)$
 $include-before$
-
 $endfor$
+
 $if(toc)$
 {
 $if(colorlinks)$
@@ -229,8 +227,6 @@ $endif$
 $if(lof)$
 \listoffigures
 $endif$
-
-\pagestyle{myheadings}
 
 $body$
 
