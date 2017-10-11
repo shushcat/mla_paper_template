@@ -1,5 +1,5 @@
 ---
-title: Paper Title
+title: A Paper's Title
 author: John O. Brickley
 csl: mla8.csl
 bibliography: references.bib
