@@ -3,6 +3,8 @@ title: A Paper's Title
 author: John O. Brickley
 csl: mla8.csl
 bibliography: references.bib
+nocite: |
+    @ipsum
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam in augue tortor. Donec a pharetra lorem, eget faucibus lorem. Curabitur tempor nunc non sapien eleifend congue. Aenean orci ipsum, posuere non ipsum a, semper scelerisque ante. Donec eu maximus augue. Pellentesque mollis accumsan condimentum. Duis vel feugiat odio, sit amet tempor neque. Mauris congue sodales ipsum vel ornare. Nullam at risus sit amet dolor egestas fermentum non nec erat. Duis aliquam lacus urna, quis varius mi tempus quis.
