@@ -137,30 +137,18 @@ $if(strikeout)$
 % avoid problems with \sout in headers with hyperref:
 \pdfstringdefDisableCommands{\renewcommand{\sout}{}}
 $endif$
+
+% Indent all paragraphs by 1/2 inch
 \usepackage{parskip}
 \setlength{\parindent}{0.5in}
 \setlength{\parskip}{0pt plus 3pt minus 1pt}
 \usepackage{indentfirst}
+
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-$if(numbersections)$
-\setcounter{secnumdepth}{$if(secnumdepth)$$secnumdepth$$else$5$endif$}
-$else$
-\setcounter{secnumdepth}{0}
-$endif$
-$if(subparagraph)$
-$else$
-% Redefines (sub)paragraphs to behave more like sections
-\ifx\paragraph\undefined\else
-\let\oldparagraph\paragraph
-\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
-\fi
-\ifx\subparagraph\undefined\else
-\let\oldsubparagraph\subparagraph
-\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
-\fi
-$endif$
+\setcounter{secnumdepth}{1}
+
 $if(dir)$
 \ifxetex
   % load bidi as late as possible as it modifies e.g. graphicx
@@ -197,6 +185,10 @@ $if(institute)$
 $endif$
 \date{$date$}
 
+\usepackage{titlesec}
+\titlelabel{\thetitle.\quad}
+
+
 \begin{document}
 $if(title)$
 \maketitle
@@ -226,6 +218,9 @@ $endif$
 $if(lof)$
 \listoffigures
 $endif$
+
+\pagestyle{myheadings}
+
 $body$
 
 $if(natbib)$
