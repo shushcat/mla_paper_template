@@ -1,11 +1,15 @@
-\documentclass[12pt]{article}
+\documentclass[12pt]{scrartcl}
+
 $if(fontfamily)$
 \usepackage[$for(fontfamilyoptions)$$fontfamilyoptions$$sep$,$endfor$]{$fontfamily$}
 $else$
 \usepackage{lmodern}
 $endif$
+
+% Use double spacing
 \usepackage{setspace}
 \doublespacing
+
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
 \usepackage{fixltx2e} % provides \textsubscript
@@ -185,8 +189,15 @@ $if(institute)$
 $endif$
 \date{$date$}
 
-\usepackage{titlesec}
-\titlelabel{\thetitle.\quad}
+% \usepackage{titlesec}
+% \titlelabel{\thetitle.\quad}
+
+\renewcommand{\thesection}{\arabic{section}.}
+
+% Follow footnote marks with periods.
+% \usepackage{footmisc}
+% \usepackage{scrextend}
+\deffootnote[1.7em]{1.6em}{2em}{\thefootnotemark.\enskip}
 
 
 \begin{document}
