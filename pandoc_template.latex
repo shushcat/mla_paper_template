@@ -166,7 +166,7 @@ $endif$
 
 \date{$date$}
 
-% Periods after footnote numerals
+% Number sections and follow numerals with periods
 \renewcommand{\thesection}{\arabic{section}.}
 
 % Header on non-title pages
@@ -191,7 +191,7 @@ $date$
 \end{flushleft}
 \bigskip
 \begin{center}
-\textbf{\textsf{\Large{$title$}}}
+\textbf{\textsf{\LARGE{$title$}}}
 \bigskip
 \end{center}
 }
