@@ -176,7 +176,7 @@ $endif$
 
 % MLA title
 \renewcommand*{\maketitle}{%
-\thispagestyle{plain}
+\thispagestyle{empty}
 \begin{flushleft}
 $if(author)$
 $author$\\
