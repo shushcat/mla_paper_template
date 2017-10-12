@@ -191,7 +191,7 @@ $date$
 \end{flushleft}
 \bigskip
 \begin{center}
-\Large{$title$}
+\textbf{\textsf{\Large{$title$}}}
 \bigskip
 \end{center}
 }
