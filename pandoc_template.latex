@@ -196,6 +196,11 @@ $date$
 \end{center}
 }
 
+% MLA block quotation indent
+\renewenvironment{quote}%
+  {\list{}{\leftmargin=0.5in}\item[]}%
+  {\endlist}
+
 \begin{document}
 
 $if(title)$
