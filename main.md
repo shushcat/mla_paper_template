@@ -3,6 +3,7 @@ title: A Paper's Title
 author: John O. Brickley
 instructor: Professor's Name
 course: Course Title
+date: \today
 csl: mla8.csl
 bibliography: references.bib
 nocite: |
