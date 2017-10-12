@@ -208,7 +208,6 @@ $date$
   July\or August\or September\or October\or November\or December\fi\space
   \number\year}
 
-
 \begin{document}
 
 $if(title)$
