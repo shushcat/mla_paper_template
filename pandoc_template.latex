@@ -171,7 +171,7 @@ $endif$
 
 % Header on non-title pages
 \usepackage{scrlayer-scrpage}
-\ohead{Brickley \pagemark}
+\ohead{\textnormal{Brickley} \pagemark}
 \cfoot{}
 
 % MLA title
