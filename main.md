@@ -24,6 +24,10 @@ It seems preferable to making everything homogeneous, but apparently the fine pe
 
 # Technical Problems to be Addressed #
 
+## The "Works Cited" Section is Absent from PDF Outlines
+
+Why him do.
+
 ## Copies of the Repository Push to Remote by Default
 
 This could cause problems if I forget myself, which isn't particularly far-fetched.  Adding a target for `new` to the Makefile, to remove all references to remote and blank this file, is probably the way to go.
