@@ -6,3 +6,6 @@ pdf : references.bib hanging_indent_bib.latex mla8.csl main.md
 
 docx : references.bib mla8.csl main.md
 	pandoc -S -o output.docx --filter pandoc-citeproc main.md
+
+new :
+	git remote remove origin
