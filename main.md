@@ -12,21 +12,7 @@ nocite: |
 
 Rather than filling this paper with automatically generated text, it would be better to use it as an MLA style guide, based on *The Purdue OWL*.^[OWL being an abbreviation for Online Writing Lab.]
 
-# Problems with MLA in This Paper
-
-## The Right Edge Isn't Ragged
-
-Although I prefer this, some people may be frightened and alarmed.
-
-## Paper and Section Titles are Large, Bold, and Sans Serif
-
-It seems preferable to making everything homogeneous, but apparently the fine people at the MLA disagree.
-
 # Technical Problems to be Addressed #
-
-## The "Works Cited" Section is Absent from PDF Outlines
-
-Why him do.
 
 ## Copies of the Repository Push to Remote by Default
 
