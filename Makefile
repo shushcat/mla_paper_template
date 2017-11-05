@@ -8,4 +8,8 @@ docx : references.bib mla8.csl main.md
 	pandoc -S -o output.docx --filter pandoc-citeproc main.md
 
 new :
-	git remote remove origin
+	rm -rf .git README.md *.pdf
+	git init .
+	git add *
+	git add .gitignore
+	git commit -m "Initial commit"
