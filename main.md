@@ -4,8 +4,8 @@ author: John O. Brickley
 instructor: Professor's Name
 course: Course Title
 date: \today
-csl: mla8.csl
-bibliography: references.bib
+csl: src/mla8.csl
+bibliography: lib/references.bib
 nocite: |
     @2016pow
 ---

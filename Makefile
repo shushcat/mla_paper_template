@@ -1,10 +1,10 @@
-pdf : references.bib hanging_indent_bib.latex mla8.csl main.md
+pdf :
 	cat main.md > temp.md
-	cat hanging_indent_bib.latex >> temp.md
-	pandoc -S -o output.pdf --template=pandoc_template.latex --filter pandoc-citeproc temp.md
+	cat src/hanging_indent_bib.latex >> temp.md
+	pandoc -S -o output.pdf --template=src/pandoc_template.latex --filter pandoc-citeproc temp.md
 	rm temp.md
 
-docx : references.bib mla8.csl main.md
+docx :
 	pandoc -S -o output.docx --filter pandoc-citeproc main.md
 
 clean:
