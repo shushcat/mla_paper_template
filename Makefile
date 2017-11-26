@@ -7,9 +7,12 @@ pdf : references.bib hanging_indent_bib.latex mla8.csl main.md
 docx : references.bib mla8.csl main.md
 	pandoc -S -o output.docx --filter pandoc-citeproc main.md
 
+clean:
+	rm -rf *.pdf *.docx
+
 # Must stay at end of Makefile for automatic removal
-new :
-	rm -rf .git README.md *.pdf
+new : clean
+	rm -rf .git README.md
 	head --lines=-9 Makefile > Makefile.tmp
 	mv Makefile.tmp Makefile
 	git init .
