@@ -2,6 +2,14 @@ This repository aims to make it somewhat easier for me to write papers in MLA fo
 
 # Usage
 
+1. Execute `make new` to
+    - remove the README along with any generated files,
+    - remove the "new" rule from the Makefile, and
+    - initialize the directory as a new Git repository.
+2. Gather reference materials, savings them to `lib` and adding them to `references.bib` as you go along.
+3. Type up a paper.
+4. Wonder whether you could have done better.
+
 Reference materials go in `lib` with `references.bib`.
 
 # TODO
