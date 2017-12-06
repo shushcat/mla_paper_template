@@ -1,7 +1,7 @@
 pdf :
 	cat main.md > temp.md
-	cat src/hanging_indent_bib.latex >> temp.md
-	pandoc -S -o output.pdf --template=src/pandoc_template.latex --filter pandoc-citeproc temp.md
+	cat hanging_indent_bib.latex >> temp.md
+	pandoc -S -o output.pdf --template=pandoc_template.latex --filter pandoc-citeproc temp.md
 	rm temp.md
 
 docx :
