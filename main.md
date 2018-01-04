@@ -1,6 +1,6 @@
 ---
 title: A Paper's Title
-author: John O. Brickley
+author: Author's Name
 instructor: Professor's Name
 course: Course Title
 date: \today
