@@ -4,7 +4,7 @@ This repository aims to make it somewhat easier to write papers in MLA format, a
 
 - `main.md`: the document itself.
 - `mla8.csl`: citation style information for MLA from [](http://citationstyles.org/).
-- `hanging_indent_bib.latex`: makes sure that the "Works Cited" section is unnumbered and its entries with hanging indents.
+- `hanging_indent_bib.latex`: makes sure that the "Works Cited" section is unnumbered and its entries have hanging indents.
 - `pandoc_template.latex`: MLA styling for the body of the document.
 - `references.bib`: references (in [BibTeX format](https://en.wikipedia.org/wiki/BibTeX#Bibliographic_information_file)) go here.
 - `Makefile`: build rules.
@@ -23,7 +23,7 @@ In order to automatically generate the nicely-formatted PDFs I've promised you, 
     - remove the README along with any generated files,
     - remove the "new" rule from the Makefile, and
     - initialize the directory as a new Git repository.
-2. Gather reference materials, savings them to `lib` and adding them to `references.bib` as you go along.
+2. Gather reference materials, adding entries for each work to `references.bib` as you go along.
 3. Type up a paper, using [Pandoc's Markdown flavor](http://pandoc.org/MANUAL.html#pandocs-markdown).
 4. Execute `make pdf`.
 4. Open `output.pdf` and regard your work with a measure of sadness; wonder whether you could have done better.
