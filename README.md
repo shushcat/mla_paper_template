@@ -1,15 +1,15 @@
-This repository aims to make it somewhat easier to write papers in MLA format, as is required by most humanities departments in the US.  Since I'm a reasonable person who would like to be able to read source documents later, and who likes the tools afforded by version control, I'd prefer doing this in plain text.
+Most humanities departments in the US require that submitted papers be in MLA format, but this can be tedious to achieve.  This repository gathers the tools needed for producing MLA-formatted PDFs from text files written in Markdown.
 
 # Contents
 
 - `main.md`: the document itself.
-- `mla8.csl`: citation style information for MLA from [](http://citationstyles.org/).
+- `mla8.csl`: citation style information for MLA from http://citationstyles.org/.
 - `hanging_indent_bib.latex`: makes sure that the "Works Cited" section is unnumbered and its entries have hanging indents.
 - `pandoc_template.latex`: MLA styling for the body of the document.
 - `references.bib`: references (in [BibTeX format](https://en.wikipedia.org/wiki/BibTeX#Bibliographic_information_file)) go here.
 - `Makefile`: build rules.
 
-# Requirements
+# Prerequisites
 
 In order to automatically generate the nicely-formatted PDFs I've promised you, first make sure you have
 - [Pandoc](http://pandoc.org/installing.html),
