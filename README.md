@@ -1,4 +1,12 @@
-Most humanities departments in the US require that submitted papers be in MLA format, but this can be tedious to achieve.  This repository gathers the tools needed for producing MLA-formatted PDFs from text files written in Markdown.
+Most humanities departments in the US require that submitted papers be in MLA format.  This repository gathers the tools needed for producing MLA-formatted PDFs from text files written in Markdown.
+
+# Prerequisites
+
+In order to automatically generate the nicely-formatted PDFs I've promised you, first make sure you have
+- [Pandoc](http://pandoc.org/installing.html),
+- [LaTeX](https://www.latex-project.org/get/),
+- Make (GNU or otherwise---should be present by default), and
+- A text editor.
 
 # Contents
 
@@ -8,14 +16,6 @@ Most humanities departments in the US require that submitted papers be in MLA fo
 - `pandoc_template.latex`: MLA styling for the body of the document.
 - `references.bib`: references (in [BibTeX format](https://en.wikipedia.org/wiki/BibTeX#Bibliographic_information_file)) go here.
 - `Makefile`: build rules.
-
-# Prerequisites
-
-In order to automatically generate the nicely-formatted PDFs I've promised you, first make sure you have
-- [Pandoc](http://pandoc.org/installing.html),
-- [LaTeX](https://www.latex-project.org/get/),
-- Make (GNU or otherwise---should be present by default), and
-- A text editor.
 
 # Usage
 
@@ -29,7 +29,3 @@ In order to automatically generate the nicely-formatted PDFs I've promised you, 
 4. Open `output.pdf` and regard your work with a measure of sadness; wonder whether you could have done better.
 
 The `lib` directory is a handy place to tuck away any extra materials.
-
-# TODO
-
-- [ ] Setup citation management bindings.  This might end up requiring that I write an Emacs mode, which I will endeavor to view as a fun challenge rather than a heinous waste of time.
