@@ -5,10 +5,14 @@ pdf :
 	rm temp.md
 
 docx :
-	pandoc -S -o output.docx --filter pandoc-citeproc main.md
+	cat main.md > temp.md
+	echo >> temp.md
+	echo "# Works Cited" >> temp.md
+	pandoc -S -o output.docx --reference-docx=pandoc_reference.docx --filter pandoc-citeproc temp.md
+	rm temp.md
 
 clean:
-	rm -rf *.pdf *.docx
+	rm -rf output.*
 
 # Must stay at end of Makefile for automatic removal
 new : clean
