@@ -11,6 +11,13 @@ docx :
 	pandoc -S -o output.docx --reference-docx=pandoc_reference.docx --filter pandoc-citeproc temp.md
 	rm temp.md
 
+odt :
+	cat main.md > temp.md
+	echo >> temp.md
+	echo "# Works Cited" >> temp.md
+	pandoc -S -o output.odt --template=pandoc_template.opendocument --filter pandoc-citeproc temp.md
+	rm temp.md
+
 clean:
 	rm -rf output.*
 
