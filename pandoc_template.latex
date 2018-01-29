@@ -168,7 +168,7 @@ $endif$
 \date{$date$}
 
 % Number sections and follow numerals with periods
-\renewcommand{\thesection}{\arabic{section}.}
+\renewcommand{\thesection}{\Roman{section}}
 
 % Header on non-title pages
 \usepackage{scrlayer-scrpage}
