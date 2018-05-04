@@ -6,6 +6,7 @@ course: Course Title
 date: \today
 csl: mla8.csl
 bibliography: references.bib
+header-includes:
 nocite: |
     @2016pow
 ---
