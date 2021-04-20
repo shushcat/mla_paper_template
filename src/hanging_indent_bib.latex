@@ -1,11 +1,12 @@
 \newpage
 
 \makeatletter
-\renewcommand\section{\@startsection
-  {section}{1}{0in}
-  {\baselineskip}
-  {\baselineskip}
-  {\centering\Large\bfseries\sffamily}}
+\renewcommand\section{%\@startsection
+  {section}{1}{0in}%
+  {\baselineskip}%
+  {\baselineskip}%
+  {\centering\Large\bfseries\sffamily}%
+}
 \makeatother
 
 \section*{Works Cited}
