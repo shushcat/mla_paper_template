@@ -33,12 +33,11 @@ In order to automatically generate the nicely-formatted PDFs I've promised you, 
 # Usage
 
 1. Write your paper in this README file, using [Pandoc's Markdown flavor](http://pandoc.org/MANUAL.html#pandocs-markdown).
-    - Change or delete the values in the YAML header as you see fit; the `hauthor` variable determines the author name shown in running headers.
-    - Add references in BibTeX format to `references.bib`;
+    - Change or delete the values in the YAML header as you see fit; the `hauthor` variable determines the author name shown in the running header.
+    - Add references in BibTeX format to `references.bib`.
     - Include references in your "Works Cited" without citing them in the body of your paper by adding them, one per line, immediately below `nocite: |` in the YAML header, as with the reference to @2016pow (`@2016pow`) in this example document.
-1. Write your paper in this README file, adding references to `references.bib` in BibTeX format.
-3. Execute `make pdf`.
-4. Open `output.pdf` and regard your work with a measure of sadness as you wonder whether you could have done better.
+2. Execute `make pdf`.
+3. Open `output.pdf` and regard your work with a measure of sadness as you wonder whether you could have done better.
 
 The `lib` directory is a handy place to tuck away any extra materials.
 
