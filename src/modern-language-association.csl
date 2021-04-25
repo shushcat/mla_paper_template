@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="never">
+<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="never" page-range-format="minimal-two">
   <info>
     <title>Modern Language Association 8th edition</title>
     <title-short>MLA</title-short>
-    <id>http://www.zotero.org/styles/modern-language-association-8th-edition</id>
-    <link href="http://www.zotero.org/styles/modern-language-association-8th-edition" rel="self"/>
+    <id>http://www.zotero.org/styles/modern-language-association</id>
+    <link href="http://www.zotero.org/styles/modern-language-association" rel="self"/>
     <link href="http://style.mla.org" rel="documentation"/>
     <author>
       <name>Sebastian Karcher</name>
@@ -12,7 +12,7 @@
     <category citation-format="author"/>
     <category field="generic-base"/>
     <summary>This style adheres to the MLA 8th edition handbook. Follows the structure of references as outlined in the MLA Manual closely</summary>
-    <updated>2016-08-27T21:51:30+00:00</updated>
+    <updated>2018-12-13T20:05:10+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale xml:lang="en">
@@ -44,7 +44,7 @@
       <substitute>
         <names variable="editor"/>
         <names variable="translator"/>
-        <text macro="title-short"/>
+        <text macro="title"/>
       </substitute>
     </names>
   </macro>
@@ -91,16 +91,36 @@
   <macro name="other-contributors">
     <choose>
       <if variable="container-title" match="any">
-        <names variable="editor translator" delimiter=", ">
-          <label form="verb" suffix=" "/>
-          <name and="text"/>
-        </names>
+        <group delimiter=", ">
+          <names variable="container-author" delimiter=", ">
+            <label form="verb" suffix=" "/>
+            <name and="text"/>
+          </names>
+          <names variable="editor translator" delimiter=", ">
+            <label form="verb" suffix=" "/>
+            <name and="text"/>
+          </names>
+          <names variable="director illustrator interviewer" delimiter=", ">
+            <label form="verb" suffix=" "/>
+            <name and="text"/>
+          </names>
+        </group>
       </if>
       <else>
-        <names variable="editor translator" delimiter=", ">
-          <label form="verb" suffix=" " text-case="capitalize-first"/>
-          <name and="text"/>
-        </names>
+        <group delimiter=", ">
+          <names variable="container-author" delimiter=", ">
+            <label form="verb" suffix=" " text-case="capitalize-first"/>
+            <name and="text"/>
+          </names>
+          <names variable="editor translator" delimiter=", ">
+            <label form="verb" suffix=" " text-case="capitalize-first"/>
+            <name and="text"/>
+          </names>
+          <names variable="director illustrator interviewer" delimiter=", ">
+            <label form="verb" suffix=" " text-case="capitalize-first"/>
+            <name and="text"/>
+          </names>
+        </group>
       </else>
     </choose>
   </macro>
@@ -120,23 +140,37 @@
       <text variable="version"/>
     </group>
   </macro>
+  <macro name="volume-lowercase">
+    <group delimiter=" ">
+      <text term="volume" form="short"/>
+      <text variable="volume"/>
+    </group>
+  </macro>
   <macro name="number">
     <group delimiter=", ">
       <group>
         <choose>
           <!--lowercase if we have a preceding element-->
           <if variable="edition container-title" match="any">
-            <group delimiter=" ">
-              <text term="volume" form="short"/>
-              <text variable="volume"/>
-            </group>
+            <text macro="volume-lowercase"/>
           </if>
           <!--other contributors preceding the volume-->
-          <else-if variable="author editor" match="all">
-            <group delimiter=" ">
-              <text term="volume" form="short"/>
-              <text variable="volume"/>
-            </group>
+          <else-if variable="author" match="all">
+            <choose>
+              <if variable="editor translator container-author illustrator interviewer director" match="any">
+                <text macro="volume-lowercase"/>
+              </if>
+            </choose>
+          </else-if>
+          <else-if variable="editor" match="all">
+            <choose>
+              <if variable="translator container-author illustrator interviewer director" match="any">
+                <text macro="volume-lowercase"/>
+              </if>
+            </choose>
+          </else-if>
+          <else-if variable="container-author illustrator interviewer director" match="any">
+            <text macro="volume-lowercase"/>
           </else-if>
           <else>
             <group delimiter=" ">
@@ -182,11 +216,7 @@
       </group>
       <choose>
         <if variable="source" match="none">
-          <choose>
-            <if variable="URL">
-              <text macro="URI"/>
-            </if>
-          </choose>
+          <text macro="URI"/>
         </if>
       </choose>
     </group>
@@ -207,11 +237,15 @@
   </macro>
   <macro name="container2-location">
     <choose>
-      <if variable="source URL" match="all">
-        <group delimiter=", ">
-          <text variable="source" font-style="italic"/>
-          <text macro="URI"/>
-        </group>
+      <if variable="source">
+        <choose>
+          <if variable="DOI URL" match="any">
+            <group delimiter=", ">
+              <text variable="source" font-style="italic"/>
+              <text macro="URI"/>
+            </group>
+          </if>
+        </choose>
       </if>
     </choose>
   </macro>
@@ -239,7 +273,7 @@
   <citation et-al-min="3" et-al-use-first="1" disambiguate-add-names="true" disambiguate-add-givenname="true">
     <layout prefix="(" suffix=")" delimiter="; ">
       <choose>
-        <if locator="page">
+        <if locator="page line" match="any">
           <group delimiter=" ">
             <text macro="author-short"/>
             <text variable="locator"/>

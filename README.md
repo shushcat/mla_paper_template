@@ -1,19 +1,17 @@
 ---
 title: A Paper's Title
 author: Author's Name
+hauthor: Header Author
 instructor: Professor's Name
 course: Course Title
 date: \today
-csl: src/mla8.csl
 bibliography: references.bib
 header-includes:
 nocite: |
     @2016pow
 ---
 
-Rather than filling this paper with automatically generated text, it would be better to use it as a guide to both MLA style guide and Markdown syntax.^[In particular, there have been times that I have forgotten how to make footnotes.]
-
-Most humanities departments in the US require that submitted papers be in MLA format.  This repository gathers the tools needed for producing MLA-formatted PDFs from text files written in Markdown.
+Most humanities departments in the US require that submitted papers be in MLA format.  This repository gathers the tools needed for producing MLA-formatted PDFs (and ODTs) from text files written in Markdown.
 
 # Prerequisites
 
