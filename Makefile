@@ -4,6 +4,12 @@ pdf :
 	pandoc --citeproc --csl=src/mla8.csl -o output.pdf --template=src/mla8_pandoc_template.latex temp.md
 	rm temp.md
 
+pdfroff :
+	cat README.md > temp.md
+	cat src/hanging_indent_bib.md >> temp.md
+	pandoc --csl=src/mla8.csl -t ms -o output.pdf --template=src/mla8_pandoc_template.roff temp.md --citeproc
+	rm temp.md
+
 docx :
 	cat README.md > temp.md
 	echo >> temp.md
