@@ -1,5 +1,9 @@
 \documentclass[letterpaper, 12pt]{scrartcl}
 
+\newenvironment{cslreferences}%
+  {}%
+  {\par}
+
 \usepackage{lmodern}
 
 % Use double spacing
