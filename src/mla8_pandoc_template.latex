@@ -54,6 +54,9 @@ $endif$
 % Set margins
 \usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
 
+% Try to place images in the sections where they are declared
+\usepackage[section]{placeins}
+
 \usepackage[unicode=true]{hyperref}
 $if(colorlinks)$
 \PassOptionsToPackage{usenames,dvipsnames}{color} % color is loaded by hyperref
