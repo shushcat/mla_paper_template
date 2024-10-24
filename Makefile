@@ -1,7 +1,9 @@
+PDF_ENGINE=pdflatex
+
 pdf :
 	cat README.md > temp.md
 	cat src/hanging_indent_bib.latex >> temp.md
-	pandoc --citeproc --csl=src/mla8.csl -o output.pdf --template=src/mla8_pandoc_template.latex temp.md
+	pandoc --pdf-engine=$(PDF_ENGINE) --citeproc --csl=src/mla8.csl -o output.pdf --template=src/mla8_pandoc_template.latex temp.md
 	rm temp.md
 
 pdfroff :
